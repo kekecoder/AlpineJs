@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJs Tutorial</title>
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <!-- x-data, x-text, x-html -->
+    <!-- <div x-data="{name: 'Abimbola', message: 'hello from <b>alpineJs</b>'}">
+        <p x-text="name"></p>
+        <p x-html="message"></p>
+    </div>
+    <div x-data x-text="await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).text()"></div> -->
+    <!-- x-data with methods -->
+    <div x-data="{
+       message: 'click to change',
+       change(){
+           this.message = 'Changed message'
+       }
+   }">
+        <span x-text="message" @click="change()"></span>
+    </div>
+    <!-- reuseable component -->
+    <div x-data="dropdown">
+        <button @click="toggle">Open/Show</button>
+        <div x-show="open">
+            Contents...
+        </div>
+    </div>
+</body>
+
+</html>
